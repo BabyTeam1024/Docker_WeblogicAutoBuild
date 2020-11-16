@@ -1,0 +1,14 @@
+version: '3'
+services:
+  weblogic:
+    build:
+      context: .
+      args:
+        JDK: ${jdk}
+        JDKPATH: ${jdkpath}
+        WEBLOGICJAR: ${weblogicjar}
+    tty: true
+    ports:
+      - "7001:7001"
+      - "8453:8453"
+      - "5556:5556"
